@@ -12,7 +12,7 @@ import java.util.List;
  * Created by senamit on 20/3/18.
  */
 @Dao
-public interface wordDao {
+public interface WordDao {
 
     @Insert
      void insert(Word word);
