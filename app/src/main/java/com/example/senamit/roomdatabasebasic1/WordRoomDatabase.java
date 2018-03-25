@@ -36,8 +36,6 @@ public abstract class WordRoomDatabase extends RoomDatabase {
         return INSTANCE;
     }
 
-
-
     private static RoomDatabase.Callback sRoomDatabaseCallback = new WordRoomDatabase.Callback(){
 //        @Override
 //        public void onOpen(@NonNull SupportSQLiteDatabase db) {
