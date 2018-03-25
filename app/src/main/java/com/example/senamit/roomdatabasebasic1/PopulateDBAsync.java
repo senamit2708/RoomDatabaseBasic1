@@ -14,6 +14,7 @@ public class PopulateDBAsync extends AsyncTask<Void, Void, Void> {
         mDao = db.wordDao();
     }
 
+
     @Override
     protected Void doInBackground(Void... params) {
         mDao.deleteAll();
