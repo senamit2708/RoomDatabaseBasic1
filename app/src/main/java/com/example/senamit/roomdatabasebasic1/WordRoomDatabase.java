@@ -1,9 +1,11 @@
 package com.example.senamit.roomdatabasebasic1;
 
+import android.arch.persistence.db.SupportSQLiteDatabase;
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
+import android.support.annotation.NonNull;
 
 /**
  * Created by senamit on 20/3/18.
@@ -27,10 +29,20 @@ public abstract class WordRoomDatabase extends RoomDatabase {
                 if (INSTANCE ==null){
                     //database is created here
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                            WordRoomDatabase.class, "word_database").build();
+                            WordRoomDatabase.class, "word_database").addCallback(sRoomDatabaseCallback).build();
                 }
             }
         }
         return INSTANCE;
     }
+
+
+    private static RoomDatabase.Callback sRoomDatabaseCallback = new WordRoomDatabase.Callback(){
+        @Override
+        public void onOpen(@NonNull SupportSQLiteDatabase db) {
+            super.onOpen(db);
+            new PopulateDBAsync(INSTANCE).execute();
+        }
+    };
+
 }

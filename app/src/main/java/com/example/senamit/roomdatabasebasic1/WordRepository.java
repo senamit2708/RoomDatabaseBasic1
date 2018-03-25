@@ -2,6 +2,7 @@ package com.example.senamit.roomdatabasebasic1;
 
 import android.app.Application;
 import android.arch.lifecycle.LiveData;
+import android.arch.persistence.room.RoomDatabase;
 import android.os.AsyncTask;
 
 import java.util.List;
