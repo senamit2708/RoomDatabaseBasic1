@@ -13,7 +13,7 @@ import android.support.annotation.NonNull;
 //here in the entities we will enter all the class that are entity
     //and version no will increase if database will be updated , i dont know clearly about version now
     //abstract classs and also extends the RoomDatabase
-@Database(entities = {Word.class}, version = 1)
+@Database(entities = {Word.class}, version = 2)
 public abstract class WordRoomDatabase extends RoomDatabase {
     //here we r creating the abstract method for all the @Dao class,
     //currently we have only one, so only one is created

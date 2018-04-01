@@ -17,6 +17,9 @@ public class Word {
     @ColumnInfo(name = "word")
     private String mWord;
 
+    @ColumnInfo(name="testpart")
+    private String testCol;
+
 
 
     public Word(@NonNull String word) {
@@ -26,5 +29,13 @@ public class Word {
     @NonNull
     public String getWord() {
         return mWord;
+    }
+
+    public String getTestCol() {
+        return testCol;
+    }
+
+    public void setTestCol(String testCol) {
+        this.testCol = testCol;
     }
 }
